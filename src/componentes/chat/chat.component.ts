@@ -15,7 +15,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.cs.getMessages().subscribe(x=>{
       this.mensajes.push(x)
-      console.log(this.mensajes)
+      this.mensajes.reverse();
     })
   }
 

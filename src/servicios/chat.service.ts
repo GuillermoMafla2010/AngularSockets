@@ -12,7 +12,7 @@ export class ChatService {
 
   sendMessage( mensaje: string) {
     const payload = {
-      de : 'Fernando',
+      de : 'Invitado ',
       cuerpo : mensaje
     };
 

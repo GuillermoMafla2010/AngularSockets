@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
+  mensajes=[];
   text=''
   constructor(public cs:ChatService) { }
 
   ngOnInit() {
     this.cs.getMessages().subscribe(x=>{
-      console.log(x)
+      this.mensajes.push(x)
+      console.log(this.mensajes)
     })
   }
 

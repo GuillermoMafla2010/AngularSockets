@@ -10,6 +10,9 @@ import {FormsModule} from '@angular/forms';
 import { SocketIoModule , SocketIoConfig} from 'ngx-socket-io';
 import { FooterComponent } from '../componentes/footer/footer.component';
 import { ChatComponent } from '../componentes/chat/chat.component';
+import { ListausuariosComponent } from '../componentes/listausuarios/listausuarios.component';
+import { MensajesComponent } from '../pages/mensajes/mensajes.component';
+import { LoginComponent } from '../pages/login/login.component';
 
 const config: SocketIoConfig={
   url:environment.wsUrl,options:{}
@@ -19,7 +22,10 @@ const config: SocketIoConfig={
   declarations: [
     AppComponent,
     FooterComponent,
-    ChatComponent
+    ChatComponent,
+    ListausuariosComponent,
+    MensajesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

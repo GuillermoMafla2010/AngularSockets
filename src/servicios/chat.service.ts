@@ -12,7 +12,7 @@ export class ChatService {
 
   sendMessage( mensaje: string) {
     const payload = {
-      de : 'Invitado ',
+      de : this.wss.getUsuario().nombre,
       cuerpo : mensaje
     };
 

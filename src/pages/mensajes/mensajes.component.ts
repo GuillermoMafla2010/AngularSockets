@@ -1,3 +1,4 @@
+import { WebsocketsService } from './../../servicios/websockets.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MensajesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public wss: WebsocketsService) { }
 
   ngOnInit() {
+
   }
+
+
+
 
 }

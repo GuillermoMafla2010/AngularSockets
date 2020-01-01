@@ -14,6 +14,9 @@ export class MensajesComponent implements OnInit {
 
   }
 
+  salir(){
+    this.wss.logoutws()
+  }
 
 
 

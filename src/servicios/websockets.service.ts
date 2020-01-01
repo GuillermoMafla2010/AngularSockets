@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import {Observable} from 'rxjs';
 import {Usuario} from 'src/modelos/usuarios';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class WebsocketsService {
 
   public socketStatus = false;
   public usuario: Usuario;
-  constructor(private socket: Socket) {
+  constructor(private socket: Socket , public router:Router) {
     this.cargarStorage();
     this.checkStatus();
   }
@@ -73,5 +74,17 @@ export class WebsocketsService {
 
   getUsuario(){
     return this.usuario
+  }
+
+  logoutws(){
+    this.usuario=null;
+    localStorage.removeItem('usuario');
+    const payload ={
+      nombre:'sin-nombre'
+    }
+
+    this.emit('configurar-usuario',payload,()=>{});
+    this.router.navigateByUrl('');
+
   }
 }
